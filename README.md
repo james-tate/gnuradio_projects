@@ -13,4 +13,4 @@ gnuradio blocks used:
 
 projects
 -----------------------
-hackrf_fm_radio: a fm radio tuner with gui fft, compatible with osmosdr source
+hackrf_fm_radio: a fm radio tuner with gui fft, compatible with osmosdr source. Based on [SDR with HackRF, Lesson 1](https://greatscottgadgets.com/sdr/1/)
