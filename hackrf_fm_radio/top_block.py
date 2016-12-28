@@ -3,7 +3,7 @@
 ##################################################
 # GNU Radio Python Flow Graph
 # Title: Top Block
-# Generated: Fri Dec 23 02:19:12 2016
+# Generated: Fri Dec 23 17:12:57 2016
 ##################################################
 
 if __name__ == '__main__':
@@ -44,7 +44,7 @@ class top_block(grc_wxgui.top_block_gui):
         # Variables
         ##################################################
         self.channel_freq = channel_freq = 106.1e6
-        self.samp_rate = samp_rate = 4e6
+        self.samp_rate = samp_rate = 10e6
         self.rf_gain = rf_gain = 0
         self.if_gain = if_gain = 20
         self.channel_width = channel_width = 200e3
@@ -207,6 +207,7 @@ class top_block(grc_wxgui.top_block_gui):
 
         self.low_pass_filter_0 = filter.fir_filter_ccf(int(samp_rate/channel_width), firdes.low_pass(
         	1, samp_rate, 75e3, 25e3, firdes.WIN_HAMMING, 6.76))
+        self.blocks_wavfile_sink_0 = blocks.wavfile_sink('/home/james/Desktop/gnuradio_projects/hackrf_fm_radio/fm_radio.wav', 1, 48000, 16)
         self.blocks_multiply_xx_0 = blocks.multiply_vcc(1)
         self.blocks_multiply_const_vxx_0 = blocks.multiply_const_vff((audio_gain, ))
         self.audio_sink_0 = audio.sink(48000, '', True)
@@ -222,6 +223,7 @@ class top_block(grc_wxgui.top_block_gui):
         self.connect((self.analog_sig_source_x_0, 0), (self.blocks_multiply_xx_0, 1))
         self.connect((self.analog_wfm_rcv_0, 0), (self.blocks_multiply_const_vxx_0, 0))
         self.connect((self.blocks_multiply_const_vxx_0, 0), (self.audio_sink_0, 0))
+        self.connect((self.blocks_multiply_const_vxx_0, 0), (self.blocks_wavfile_sink_0, 0))
         self.connect((self.blocks_multiply_xx_0, 0), (self.low_pass_filter_0, 0))
         self.connect((self.blocks_multiply_xx_0, 0), (self.wxgui_fftsink2_0_0, 0))
         self.connect((self.low_pass_filter_0, 0), (self.rational_resampler_xxx_0, 0))
