@@ -1,5 +1,5 @@
-
+!"."
 
 /hackrf_file_rx_tx/capture
 
-.wav
+*.wav
