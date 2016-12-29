@@ -3,7 +3,7 @@
 ##################################################
 # GNU Radio Python Flow Graph
 # Title: Top Block
-# Generated: Tue Dec 27 19:41:20 2016
+# Generated: Tue Dec 27 23:53:12 2016
 ##################################################
 
 if __name__ == '__main__':
@@ -126,7 +126,7 @@ class top_block(grc_wxgui.top_block_gui):
         	v_offset=0,
         	t_scale=0,
         	ac_couple=False,
-        	xy_mode=True,
+        	xy_mode=False,
         	num_inputs=1,
         	trig_mode=wxgui.TRIG_MODE_AUTO,
         	y_axis_label='Counts',
